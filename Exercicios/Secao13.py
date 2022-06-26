@@ -147,6 +147,31 @@ with open(user_open_file, 'r') as old_file:
 
 
 """
+9. Faça um programa que receba dois arquivos do usuário, e crie um terceiro arquivo com o conteúdo dos dois
+primeiros juntos (o conteúdo do primeiro seguido do conteúdo do segundo).
+
+user_file1 = input('>>> ')
+user_file2 = input('>>> ')
+
+
+with open('result.txt', 'w') as result:
+    with open(user_file1, 'r') as file1:
+        with open(user_file2, 'r') as file2:
+            result.write(file1.readline() + file2.readline())
+"""
+
+
+"""
+10. Faça um programa que receba o nome de um arquivo de entrada e outro de saída. O arquivo de entrada
+contém em cada linha o nome de uma cidade (ocupando 40 caracteres) e o seu número de habitantes. O
+programa deverá ler o arquivo de entrada e gerar um arquivo de saída onde aparece o nome da cidade
+mais populosa seguida pelo seu número de habitantes.
+
+------------ N FEITO ------------
+"""
+
+
+"""
 BONUS: Faça um programa que receba do usuário um arquivo de texto e mostre na tela quantas vezes cada 
 caractere aparece dentro do arquivo.
 
