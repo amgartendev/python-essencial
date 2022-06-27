@@ -172,6 +172,47 @@ mais populosa seguida pelo seu número de habitantes.
 
 
 """
+11. Faça um programa no qual o usuário informe o nome do arquivo e uma palavra, e retorna
+o número de vezes que aquela palavra aparece no arquivo.
+
+user_file = input('>>> ')
+word = input('>>> ')
+
+with open(user_file, 'r') as file:
+    list_words = file.readline()
+    list_words.split(',')
+    print(list_words.count(word))
+"""
+
+
+"""
+12. Abra um arquivo de texto, calcule e escreva o número de caracteres, o número de linhas e o
+número de palavras neste arquivo. Escreva também quantas vezes cada letra ocorre no arquivo
+(ignorando letras com acento). Obs.: palavras são separadas por um ou mais caracteres de espaço,
+tabulação ou nova linha.
+
+from collections import Counter
+
+with open('arq.txt', 'r', encoding='UTF-8') as file:
+    count_words = 0
+    count_chars = 0
+
+    lines = file.readlines()
+
+    for word in lines:
+        count_words += 1
+        for char in word:
+            count_chars += 1
+    file.seek(0)
+
+    print(f'Caracteres: {count_chars}')
+    print(f'Linhas: {len(lines)}')
+    print(f'Palavras: {count_words}')
+    print(f'Ocorrencia de caracteres: {Counter(file.read())}')
+"""
+
+
+"""
 BONUS: Faça um programa que receba do usuário um arquivo de texto e mostre na tela quantas vezes cada 
 caractere aparece dentro do arquivo.
 
@@ -183,6 +224,3 @@ with open(user_file, 'r') as f:
     res = f.read()
     print(Counter(res))
 """
-
-
-
