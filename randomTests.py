@@ -1,16 +1,20 @@
-def seja_educado_mesmo(funcao):
-    def sendo_mesmo():
-        print('Foi um prazer conhecer você')
-        funcao()
-        print('Tenha um excelente dia!')
-    return sendo_mesmo
+from functools import wraps
 
 
-@seja_educado_mesmo
-def apresentando():
-    print('Meu nome é Pedro')
+def gritar(funcao):
+    """Retorna a função pedindo_comida tudo em maiúscula"""
+    @wraps(funcao)
+    def gritando(*args, **kwargs):
+        return funcao(*args, **kwargs).upper()
+    return gritando
 
 
-# Testando
+@gritar
+def pedindo_comida(principal, acompanhamento):
+    """Retorna um texto pedindo a comida"""
+    return f'Quero pedir uma {principal} com {acompanhamento}'
 
-apresentando()
+
+print(pedindo_comida('Picanha', 'Batata Frita'))
+print(f'Nome: {pedindo_comida.__name__}')
+print(f'Docs: {pedindo_comida.__doc__}')
