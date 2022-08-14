@@ -46,6 +46,3 @@ print(cabecalho('geek university', alinhamento=False))
 # print(cabecalho('geek university', alinhamento=None))
 print(cabecalho('geek university', alinhamento=True))
 """
-
-
-
